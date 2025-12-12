@@ -42,9 +42,10 @@ const ChatInput = () => {
     setStreamingContent("");
     clearToolEvents();
 
-    const url = `http://localhost:8000/agent/stream?message=${encodeURIComponent(
-      messageText
-    )}&chat_id=${currentChatId}`;
+    const url = `https://devops-ai-agent-fastiapi.onrender.com/agent/stream?message=${encodeURIComponent(
+  messageText
+)}&chat_id=${currentChatId}`;
+
 
     console.log("AGENT SSE URL:", url);
 
