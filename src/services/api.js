@@ -3,6 +3,7 @@ import axios from 'axios';
 const BASE_URL = "https://devops-ai-agent-fastiapi.onrender.com";
 
 
+
 const api = axios.create({
     baseURL: API_BASE_URL,
     headers: {
@@ -13,14 +14,14 @@ const api = axios.create({
 // ✔ FIXED: createChat must not send body
 export const chatService = {
     createChat: async () => {
-        const response = await api.post('/chat/create');
-        return response.data;   // { chat_id: "xxxx" }
-    },
+    const res = await fetch(`${BASE_URL}/chat/create`, { method: "POST" });
+    return res.json();
+  },
 
-    getChats: async () => {
-        const response = await api.get('/chats');
-        return response.data;
-    },
+  getChat: async (id) => {
+    const res = await fetch(`${BASE_URL}/chat/${id}`);
+    return res.json();
+  },
 
     getMessages: async (chatId) => {
         const response = await api.get(`/chat/${chatId}`);

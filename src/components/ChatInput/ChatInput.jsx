@@ -42,8 +42,8 @@ const ChatInput = () => {
     setStreamingContent("");
     clearToolEvents();
 
-    const url = `https://devops-ai-agent-fastiapi.onrender.com/agent/stream?message=${encodeURIComponent(
-  messageText
+  const url = `https://devops-ai-agent-fastiapi.onrender.com/agent/stream?message=${encodeURIComponent(
+    messageText
 )}&chat_id=${currentChatId}`;
 
 
