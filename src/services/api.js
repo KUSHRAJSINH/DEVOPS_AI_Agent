@@ -20,6 +20,11 @@ export const chatService = {
         return res.json();
     },
 
+    getChats: async () => {   // ✔ ADDED FIX
+        const res = await fetch(`${BASE_URL}/chats`);
+        return res.json();
+    },
+
     getMessages: async (chatId) => {
         const response = await api.get(`/chat/${chatId}`);
         return response.data;
@@ -30,5 +35,6 @@ export const chatService = {
         return response.data;
     },
 };
+
 
 export default api;
