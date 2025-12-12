@@ -3,9 +3,9 @@ import axios from 'axios';
 const BASE_URL = "https://devops-ai-agent-fastiapi.onrender.com";
 
 const api = axios.create({
-    baseURL: BASE_URL,   // ✔ FIXED HERE
+    baseURL: BASE_URL,
     headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
     },
 });
 
@@ -20,7 +20,7 @@ export const chatService = {
         return res.json();
     },
 
-    getChats: async () => {   // ✔ ADDED FIX
+    getChats: async () => {                 // ⭐ REQUIRED FIX
         const res = await fetch(`${BASE_URL}/chats`);
         return res.json();
     },
@@ -35,6 +35,3 @@ export const chatService = {
         return response.data;
     },
 };
-
-
-export default api;
